@@ -9,7 +9,7 @@
     "minify:css": "minify style.css > dist/style.css",
     "minify:js": "minify index.js > dist/index.js",
     "minify:html": "minify index.html > dist/index.html",
-    "move:manifest":"cp manifest.webmanifest dist/manifest.webmanifest",
+    "move:manifest":"cp manifest.json dist/manifest.json",
     "move:offline":"cp offline.html dist/offline.html",
     "move:favicon":"cp index.png dist/index.png",
     "move:pwabuilder":"cp pwabuilder-sw.js dist/pwabuilder-sw.js",

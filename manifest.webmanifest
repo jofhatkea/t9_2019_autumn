@@ -3,7 +3,7 @@
 	"lang" : "en",
 	"name" : "Document",
 	"scope" : "/t9_2019_autumn/",
-	"display" : "browser",
+	"display" : "fullscreen",
 	"start_url" : "https://jofhatkea.github.io/t9_2019_autumn/",
 	"short_name" : "Document",
 	"theme_color" : "transparent",
