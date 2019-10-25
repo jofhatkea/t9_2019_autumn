@@ -1,0 +1,20 @@
+{
+  "name": "t9_cars",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jofhatkea/t9_2019_autumn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jofhatkea/t9_2019_autumn/issues"
+  },
+  "homepage": "https://github.com/jofhatkea/t9_2019_autumn#readme"
+}

@@ -45,7 +45,7 @@ function init(){
 }
 function setupNav(){
   //
-  fetch("http://kea-alt-del.dk/t9_2019_autumn/wp-json/wp/v2/categories")
+  fetch("https://kea-alt-del.dk/t9_2019_autumn/wp-json/wp/v2/categories")
     .then(res=>res.json())
     .then(data=>data.forEach(addMenuItem))
 }
