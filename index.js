@@ -41,12 +41,25 @@ function init(){
   setupSearch();
   preloader.setup();
   getData();
+  setupNav();
 }
 function setupNav(){
-  //http://kea-alt-del.dk/t9_2019_autumn/wp-json/wp/v2/categories
+  //
+  fetch("http://kea-alt-del.dk/t9_2019_autumn/wp-json/wp/v2/categories")
+    .then(res=>res.json())
+    .then(data=>data.forEach(addMenuItem))
+}
+function addMenuItem(data){
+  if(data.count>0 && data.parent===14){
+    console.log(data)
+    const a = document.createElement("a");
+    a.textContent=data.name;
+    a.setAttribute("href","?category="+data.id);
+    document.querySelector("nav").appendChild(a)
+  }
 }
 function getData(search=""){
-  console.log("getData")
+  //console.log("getData")
   const searchParam = search ? "&search="+search:""
   fetch("https://kea-alt-del.dk/t9_2019_autumn/wp-json/wp/v2/book?_embed"+searchParam)
     .then(res=>res.json())
@@ -59,7 +72,7 @@ function handleData(myData){
   myData.forEach(showPost)
 }
 function showPost(post){
-  console.log(post)
+  //console.log(post)
   const imgPath = 
     post._embedded["wp:featuredmedia"][0].media_details.sizes.thumbnail.source_url;
   
@@ -72,6 +85,7 @@ function showPost(post){
   
   const img = postCopy.querySelector("img.cover");
   img.setAttribute("src", imgPath)
+  img.setAttribute("alt", "The cover of "+post.title.rendered)
   const content = postCopy.querySelector("section");
   content.innerHTML=post.content.rendered;
   

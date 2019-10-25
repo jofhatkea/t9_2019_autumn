@@ -4,6 +4,10 @@ body {
 .body-copy {
   padding-left: 2rem;
 }
+nav {
+  display:flex;
+  justify-content: space-around;
+}
 #preloader {
   position:absolute;
   width: 100px;
