@@ -4,7 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "predeploy":"npm run minify && npm run move",
+    "deploy": "gh-pages -d dist",
+    "minify:css": "minify style.css > dist/style.css",
+    "minify:js": "minify index.js > dist/index.js",
+    "minify:html": "minify index.html > dist/index.html",
+    "move:manifest":"cp manifest.webmanifest dist/manifest.webmanifest",
+    "move:offline":"cp offline.html dist/offline.html",
+    "move:pwabuilder":"cp pwabuilder-sw.js dist/pwabuilder-sw.js",
+    "minify":"npm-run-all minify:*",
+    "move":"npm-run-all move:*"
   },
   "repository": {
     "type": "git",
@@ -16,5 +25,10 @@
   "bugs": {
     "url": "https://github.com/jofhatkea/t9_2019_autumn/issues"
   },
-  "homepage": "https://github.com/jofhatkea/t9_2019_autumn#readme"
+  "homepage": "https://github.com/jofhatkea/t9_2019_autumn#readme",
+  "devDependencies": {
+    "gh-pages": "^2.1.1",
+    "minify": "^4.1.3",
+    "npm-run-all": "^4.1.5"
+  }
 }
