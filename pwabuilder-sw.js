@@ -3,7 +3,7 @@
 const CACHE = "pwabuilder-offline";
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "index.html";
-const offlineFallbackPage = "ToDo-replace-this-name.html";
+const offlineFallbackPage = "offline.html";
 
 // Install stage sets up the index page (home page) in the cache and opens a new cache
 self.addEventListener("install", function (event) {
@@ -38,6 +38,7 @@ self.addEventListener("fetch", function (event) {
       })
       .catch(function (error) {        
         console.log("[PWA Builder] Network request Failed. Serving content from cache: " + error);
+        console.dir(error)
         return fromCache(event.request);
       })
   );
