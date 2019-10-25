@@ -11,6 +11,7 @@
     "minify:html": "minify index.html > dist/index.html",
     "move:manifest":"cp manifest.webmanifest dist/manifest.webmanifest",
     "move:offline":"cp offline.html dist/offline.html",
+    "move:favicon":"cp index.png dist/index.png",
     "move:pwabuilder":"cp pwabuilder-sw.js dist/pwabuilder-sw.js",
     "minify":"npm-run-all minify:*",
     "move":"npm-run-all move:*"
